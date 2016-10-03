@@ -1,0 +1,163 @@
+**************** First line of html
+
+<!DOCTYPE html>
+
+
+**************** Main structure of tags
+
+									<html>
+							<head>			<body>
+							</head>			</body>
+									</html>
+
+**************** Tags vs Elements
+
+For example these are tags:
+<title>, </title>, <body>
+
+These are elements:
+<title>This is the page title</title>   ----> Title element
+
+
+**************** Title goes inside the <head> tag (<head> contains information ABOUT the page while <body> is contains the content of the page)
+
+<head>
+    <title>My first web page</title>
+</head>
+
+**************** Paragraph tag (<p> and </p> wrap around a paragraph )
+
+<p>
+	This is a paragraph
+</p>
+
+**************** Emphasize tag (<em> and </em> wrap around a italicized piece) 
+
+<em>is</em>
+
+**************** Strong tag (<strong> and </strong> wrap around a bold piece)
+
+<strong>Warning:</strong>
+
+**************** Line break tag (<br> there is no closing and adds a line break, is used when within a paragraph you need to line break, otherwise if there are 2 paragraphs by definition you should've used 2 <p></p> tags)
+
+This is my first web page<br>
+How exciting
+
+**************** Heading tags (6 levels <h1></h1> through <h6></h6>)
+
+<h1>Level one heading  </h1>  ----> Biggest and boldest
+<h2>Level two heading  </h2>
+<h3>Level three heading</h3>
+<h4>Level four heading </h4>
+<h5>Level five heading </h5>
+<h6>Level siz heading  </h6>  ----> Smallest
+
+**************** Unordered list (for example unordered bullet points <ul></ul> wrap around the unordered list, each bullet then is represented by <li></li>)
+
+<ul>
+	<li>Bullet point 1</li>
+	<li>Bullet point 2</li>
+	<li>Bullet point 3</li>
+</ul>
+
+**************** Ordered list (for example ordered numbered points <ol></ol> wrap around the ordered list, each bullet then is represented by <li></li>)
+
+<ol>
+	<li>Number point 1</li>
+	<li>Number point 2</li>
+	<li>Number point 3</li>
+</ol>
+
+**************** An anchor tag used to define a clickable link to other webpages (<a> and </a> wrap around the link which can be global URLs and Addresses or relative addresses to current file, links also can be directed using an ID as seen below)
+
+<a href="http://www.htmldog.com">HTML Dog</a></p>
+
+<h2 id="moss">Moss</h2>
+<a href="#moss">Go to moss</a>
+
+**************** Image tag used to represent images (<img> does not have closing tag, src attribute like href can be absolute or relative)
+
+<img src="http://www.htmldog.com/badge1.gif" width="120" height="90" alt="HTML Dog"> ---> The width and height attributes are necessary because if they are excluded, the browser will tend to calculate the size as the image loads, instead of when the page loads, which means that the layout of the document may jump around while the page is loading. The alt attribute is the alternative description. This is an accessibility consideration, providing meaningful information for users who are unable to see the image (if they are visually impaired, for example).
+
+**************** Tables used to structure tabular data (<table> and </table> wrap around the table)
+
+<table>
+    <tr>
+        <th>Column 1 heading</th>
+        <th>Column 2 heading</th>
+        <th>Column 3 heading</th>
+    </tr>
+    <tr>
+        <td>Row 1, cell 1</td>
+        <td>Row 1, cell 2</td>
+        <td>Row 1, cell 3</td>
+    </tr>
+    <tr>
+        <td>Row 2, cell 1</td>
+        <td colspan="2">Row 2, cell 2, also spanning Row 2, cell 3</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Row 3, cell 1, also spanning Row 4, cell 1</td>
+        <td>Row 3, cell 2</td>
+        <td>Row 3, cell 3</td>
+    </tr>
+    <tr>
+        <td>Row 4, cell 1</td>
+        <td>Row 4, cell 2</td>
+        <td>Row 4, cell 3</td>
+    </tr>
+</table>
+
+**************** Input tag represent the input user data like textbox and stuff (<input> does not need closing tag and works with many attributes)
+
+<input type="text">
+<input type="password">
+<input name="username" id="username">
+
+http://www.htmldog.com/references/html/tags/input/
+
+**************** Text area is like a huge text box (<textarea> and </textarea> wrap around a textarea
+
+<textarea rows="5" cols="20">A big load of text</textarea>
+
+**************** form is used to facilitate the submission of user-inputted data (<form></form> and is used with elements such as input, select and textarea to create form controls.)
+
+<form action="processingscript.php" method="post">
+
+</form>
+
+http://www.htmldog.com/references/html/tags/form/
+
+**************** The select tag works with the option tag to make drop-down select boxes. (<select> and </select> wrap around the drop-down)
+
+<select>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option value="third option">Option 3</option>
+</select>
+
+-----> When the form is submitted, the value of the selected option will be sent. This value will be the text between the selected opening and closing option tag unless an explicit value is specified with the value attribute, in which case this will be sent instead. So, in the above example, if the first item is selected, “Option 1” will be sent, if the third item is selected, “third option” will be sent.
+
+<form action="dogselecta.php">
+    <select name="dog">
+        <option>Arctic Fox</option>
+        <option>Maned Wolf</option>
+        <option>Grey Wolf</option>
+        <option>Red Fox</option>
+        <option>Fennec</option>
+        <option selected>Domestic Dog</option>
+    </select>
+    <input type="submit">
+</form>
+
+
+**************** Div ---> <div> and </div> wrap around a chucnk(used to group together a chunk of HTML and hook some information onto that chunk)
+
+// div is for large chunks --> block
+
+
+**************** Span <span> and </span> wrap around a chucnk (used to group together a chunk of HTML and hook some information onto that chunk)
+
+// span is for smaller chunks --> within paragraphs
+

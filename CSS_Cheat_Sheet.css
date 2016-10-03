@@ -1,0 +1,395 @@
+**************** What is CSS
+
+Whereas the HTML is the meaning or content, the style sheet is the presentation of that document.
+
+**************** Applying CSS to HTML
+
+1) Inline
+
+<p style="color: red">text</p>
+
+2) Internal
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Example</title>
+<style>
+
+    p {
+        color: red;
+    }
+
+    a {
+        color: blue;
+    }
+
+</style>
+...
+
+3) External in a separate file(Preferred method)
+
+In html file:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Example</title>
+    <link rel="stylesheet" href="style.css">
+...
+
+In file style.css:
+
+p {
+    color: red;
+}
+
+a {
+    color: blue;
+}
+
+**************** CSS Syntax
+
+selector {
+	property : value;
+}
+
+body {
+    font-size: 14px;
+    color: navy;
+}
+
+**************** Lengths, percentages and sizes
+
+px (such as font-size: 12px) is the unit for pixels.
+em (such as font-size: 2em) is the unit for the calculated size of a font. So “2em”, for example, is two times the current font size.
+pt (such as font-size: 12pt) is the unit for points, for measurements typically in printed media.
+% (such as width: 80%) is the unit for… wait for it… percentages.
+
+Other units include pc (picas), cm (centimeters), mm (millimeters) and in (inches).
+
+**************** Colors format
+
+red
+rgb(255,0,0)
+rgb(100%,0%,0%)
+#ff0000
+#f00
+
+**************** Colors properties
+
+h1 {
+    color: yellow;
+    background-color: blue;
+}
+
+**************** Representing text differently (font family)
+
+font-family : is the font itself (Like Times New Roman, Arial, or Verdana) ---> It can be multiple so if browser does not find it, go through a safe list
+
+p{
+	font-family: arial, helvetica, serif;
+}
+
+**************** Representing text differently (font size)
+
+font-size : is the font size
+
+p{
+	font-size: 12px;
+}
+
+**************** Representing text differently (font weight)
+
+font-weight : is the font boldness
+
+p{
+	font-weight: bold; // can be bolder, normal, lighter, ...
+}
+
+**************** Representing text differently (font style)
+
+font-style : is the font style like italic or not
+
+p{
+	font-style: italic; // can be normal, ...
+}
+
+**************** Representing text differently (text decoration)
+
+text-decoration : is whether it's underlined, overlined, ...
+
+p{
+	text-decoration: underline; // can be overline, line-through, none, ...
+}
+
+**************** Representing text differently (text transform)
+
+text-transform : is whether it's uppercase, lowecase, ...
+
+p{
+	text-transform: capitalize; // can be uppercase, lowercase, none, ...
+}
+
+**************** Representing text differently (text spacing)
+
+p {
+    letter-spacing: 0.5em;	---> space between letters in a word
+    word-spacing: 2em;		---> space between words
+    line-height: 1.5;		---> space between lines in paragraphs, ...
+    text-align: center;		---> Alignment of the text
+    text-indent: none;		---> Whether intendation is used
+}
+
+**************** Box model
+
+Margin
+		|
+			Border
+					|
+						Padding
+								|
+									Element 
+
+
+**************** Spacing elements 
+
+h2 {
+    margin: 20px;			---> Space outside of something (we have also margin-top, margin-right, margin-bottom, margin-left)
+    padding: 40px;			---> Space inside of something (we have also padding-top, padding-right, padding-bottom, padding-left)
+}
+
+
+**************** Borders
+
+h2 {
+    border-style: dashed;		---> Whether it's solid, dashed, double, groove, inset, outset, dotted (we also have border-top-style, etc)
+    border-width: 3px;			---> Width of border line (we also have border-top-width, etc))
+    border-color: red;			---> Color of border (we also have border-top-color, etc)
+    border-radius: 2px;			---> Rounded corners (we also have border-bottom-left-radius, etc)
+}
+
+**************** Classes ---> Will be identified using a 'class="MyClass"' attribute within an HTML tag, mostly when we want to do some CSS styling for a group of elements that have same class name
+
+in html file:
+
+<p class="intro">This is my recipe for making curry purely with chocolate</p>
+
+in css file:
+
+.intro {
+    color: red;
+    font-weight: bold;
+}
+
+**************** IDs ---> Will be identified using a 'id="MyID"' attribute within an HTML tag, mostly when we want to do some CSS styling for a single or few elements that have same id name
+
+in html file:
+
+<div id="top">
+
+in css file:
+
+#top {
+    background-color: #ccc;
+    padding: 20px
+}
+
+**************** Grouping same properties
+
+h2, .thisOtherClass, .yetAnotherClass {
+    color: red;
+}
+
+instead of :
+
+h2 {
+    color: red;
+}
+
+.thisOtherClass {
+    color: red;
+}
+
+.yetAnotherClass {
+    color: red;
+}
+
+**************** Nesting same properties
+
+If in html we have :
+
+<div id="top">
+    <h1>Chocolate curry</h1>
+    <p>This is my recipe for making curry purely with chocolate</p>
+    <p>Mmm mm mmmmm</p>
+</div>
+
+Then to access h1 and p properties within div with id="top":
+
+#top h1 {
+    color: #ff0;
+}
+
+#top p {
+    color: red;
+    font-weight: bold;
+}
+
+**************** Pseudo-class --> Different states for links when visited, is active, hovered over, ...
+
+a:link {            ---> Normal for link
+    color: blue;
+}
+a:visited {         ---> Previously visited for a link
+    color: purple;
+}
+a:hover {           ---> Hovered over for links
+    color: green;
+}
+a:active {          ---> Active for a link is clicked-on
+    color: red;
+}
+a:focus {           ---> Focus is for when something gains focus, that is when it is selected by, or is ready for, keyboard input
+    color: black;
+}
+
+**************** Pseudo-class --> first child (This will target something only if it is the very first descendant of an element)
+
+// For example to target only first paragraph
+
+in html:
+
+<body>
+    <p>I’m the body’s first paragraph child. I rule. Obey me.</p>
+    <p>I resent you.</p>
+</body>
+
+in css:
+
+p:first-child {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+**************** Pseudo-class --> nth child (This will target something only if it is the nth descendant of an element)
+
+// For example target a background color for every <p> element that is the second child of its parent
+
+p:nth-child(2) {
+    background: red;
+}
+
+**************** Shorthand properties
+
+p {
+    margin-top: 1px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+can be simplified :
+
+p {
+    margin: 1px 5px 10px 20px;
+}
+
+Or this:
+
+p {
+    border-width: 1px;
+    border-color: red;
+    border-style: solid;
+}
+can be simplified :
+
+p {
+    border: 1px red solid;
+}
+
+**************** Background image
+
+body {
+    background: white url(http://www.htmldog.com/images/bg.gif) no-repeat top right;
+}
+
+**************** Display property
+
+// inline means follow the flow of a line, none means disappear, block means standalone box
+// <a> and <em> are inline by default
+// <p> and <h1> are block by default
+
+li { 
+    display: inline;        ---> Can be block, none, inline-block, inline-table, ...
+}
+
+**************** Pseudo-elements
+
+p:first-letter {
+    font-size: 24px;
+    float: left;
+}
+
+p:first-line {
+    font-weight: bold;
+}
+
+**************** Before and After Content
+
+// The value of the content property can be open-quote, close-quote, any string enclosed in quotation marks, or any image, using url(imagename).
+
+blockquote:before {
+    content: open-quote;
+}
+
+blockquote:after {
+    content: close-quote;
+}
+
+li:before {
+    content: "POW! ";
+}
+
+// The content property effectively creates another box to play with so you can also add styles to the “presentational content”:
+
+li:before {
+    content: "POW! ";
+    background: red;
+    color: #fc0;
+}
+
+**************** Positioning (The position property is used to define whether a box is absolute, relative, static or fixed)
+
+#navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+}
+
+// Position can be :
+// 1 - absolute  : pulls a box out of normal flow and put it in a world of its own, can be placed absolutly anywhere in the page
+// 2 - fixed     : like absolute, but it's placed fixed completely in reference to browser window and not webpage (i.e. if you scroll the page, it'll be still in the same place in reference to the browser window)
+// 3 - static    : default value, renders a box in the normal order of things
+// 4 - relative  : the box can be offset from the original position with top, right, bottom, left properties
+
+**************** Floating (Floating a box will shift it to the right or left of a line, with surrounding content flowing around it.)
+
+// Floating is normally used to shift around smaller chunks within a page, such as pushing a navigation link to the right of a container, but it can also be used with bigger chunks, such as navigation columns.
+
+#navigation {
+    float: left;
+    width: 200px;
+}
+
+#navigation2 {
+    float: right;
+    width: 200px;
+}
+
+// if you do not want the next box to wrap around the floating objects, you can apply the clear property
+
+#footer {
+    clear: both;
+}
